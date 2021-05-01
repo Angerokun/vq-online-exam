@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Country } from 'src/app/models/country';
 import { CountryService } from 'src/app/services/country.service';
+import { CountryDetailPage } from '../country-detail/country-detail.page';
 
 @Component({
   selector: 'app-search-form',
@@ -42,5 +43,16 @@ export class SearchFormPage implements OnInit {
         this.countries = countries;
       }
     );
+  }
+
+  async getCountryDetail(code: String) {
+    console.log('Show Country Detail..');
+    const countryDetailModal = await this.modalController.create({
+      component: CountryDetailPage,
+      componentProps: { 
+          code: code
+      }
+    });
+    return await countryDetailModal.present();
   }
 }

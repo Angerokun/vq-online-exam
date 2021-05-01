@@ -41,4 +41,18 @@ export class CountryService {
       })
     )
   }
+
+  /**
+   * Get Country Detail by code
+   * @param code 
+   * @returns Country
+   */
+   getCountryDetail(code: String): Observable<Country> {
+    return this.http.get<Country>(`${this.env.API_URL}/alpha/`+ code)
+    .pipe(
+      tap(countries => {
+        return countries;
+      })
+    )
+  }
 }

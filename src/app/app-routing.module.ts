@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'search-form',
     loadChildren: () => import('./pages/search-form/search-form.module').then( m => m.SearchFormPageModule)
+  },
+  {
+    path: 'country-detail',
+    loadChildren: () => import('./pages/country-detail/country-detail.module').then( m => m.CountryDetailPageModule)
   }
 ];
 

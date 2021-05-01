@@ -11,7 +11,7 @@
 <ion-content [fullscreen]="true">
 
   <ion-list lines="none">
-    <ion-item *ngFor="let country of countries">
+    <ion-item *ngFor="let country of countries" (click)="getCountryDetail(country.alpha3Code)">
       <ion-label class="ion-text-wrap">
         <ion-text color="primary">
           <h3>{{ country.name }}</h3>
