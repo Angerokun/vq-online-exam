@@ -1,0 +1,23 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>search-form</ion-title>
+  </ion-toolbar> -->
+  <ion-searchbar
+  (ionInput)="filterList($event)"
+  >  
+  </ion-searchbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list lines="none">
+    <ion-item *ngFor="let country of countries">
+      <ion-label class="ion-text-wrap">
+        <ion-text color="primary">
+          <h3>{{ country.name }}</h3>
+        </ion-text>
+        <p>{{ country.alpha3Code }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
