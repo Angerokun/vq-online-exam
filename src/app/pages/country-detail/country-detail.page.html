@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary" (click)="dismissDetail()">
+        <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="country != undefined">{{ country.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="country != undefined">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="country.flag">
+      </ion-avatar>
+      <p>&nbsp;({{ country.alpha3Code }}) {{ country.name }}</p>
+    </ion-item>
+    <ion-item-group >
+      <ion-item-divider color="light">Country Information</ion-item-divider>
+      <ion-item><ion-label color="secondary">Capital:</ion-label>{{ country.capital }}</ion-item>
+      <ion-item><ion-label color="secondary">Region:</ion-label>{{ country.region }}</ion-item>
+      <ion-item><ion-label color="secondary">Sub Region:</ion-label>{{ country.subregion }}</ion-item>
+      <ion-item><ion-label color="secondary">Population:</ion-label>{{ country.population }}</ion-item>
+      <ion-item><ion-label color="secondary">Demonym:</ion-label>{{ country.demonym }}</ion-item>
+    </ion-item-group>
+</ion-content>
